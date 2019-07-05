@@ -1,16 +1,12 @@
-# Compiled class file
-*.class
+### Maven Directory ###
+!.mvn/wrapper/maven-wrapper.jar
 
-# Log file
+### Logs Directory ###
+logs/
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+### Package Directory ###
+*.class
 *.jar
 *.war
 *.nar
@@ -19,5 +15,48 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+### IDE or Text Editor Directory ###
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.settings
+.project
+.classpath
+.studio
+.idea
+*.iml
+*.log
+
+### macOS Directory ### 
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+### LogBack Directory ###
+logback.out.xml
+
+### BackEnd Directory ###
+backend/src/main/resources/public/
+backend/target
+selenium-debug.log
+
+### FrontEnd Directory ###
+frontend/dist/
+frontend/node/
+frontend/node_modules/
+frontend/npm-debug.log
+frontend/target
+frontend/test-output
+frontend/tests/e2e/reports
+frontend/tests/unit/coverage
+frontend/yarn-error.log
+frontend/yarn.lock
+
+### Security Directory ###
+security/target/
+
