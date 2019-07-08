@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/watonyweng/sea-guard.svg?style=flat-square)
 [![versionspringboot](https://img.shields.io/badge/springboot-2.1.6_RELEASE-brightgreen.svg)](https://github.com/spring-projects/spring-boot)
-[![versionjava](https://img.shields.io/badge/jdk-8,_9,_11-brightgreen.svg?logo=java)](https://github.com/spring-projects/spring-boot)
+[![versionjava](https://img.shields.io/badge/jdk-8,11-brightgreen.svg?logo=java)](https://github.com/spring-projects/spring-boot)
 [![versionvuejs](https://img.shields.io/badge/vue.js-2.6.10-brightgreen.svg?logo=vue.js)](https://vuejs.org/)
 [![versionvuecli](https://img.shields.io/badge/vue_CLI-3.9.1-brightgreen.svg?logo=vue.js)](https://cli.vuejs.org/)
 [![versionnodejs](https://img.shields.io/badge/nodejs-v12.6.0-brightgreen.svg?logo=node.js)](https://nodejs.org/en/)
