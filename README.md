@@ -1,5 +1,5 @@
 # sea-guard
-
+[![Build Status](https://travis-ci.com/watonyweng/sea-guard.svg?branch=master)](https://travis-ci.com/watonyweng/sea-guard)
 ![GitHub](https://img.shields.io/github/license/watonyweng/sea-guard.svg?style=flat-square)
 [![versionspringboot](https://img.shields.io/badge/springboot-2.1.6_RELEASE-brightgreen.svg)](https://github.com/spring-projects/spring-boot)
 [![versionjava](https://img.shields.io/badge/jdk-8,11-brightgreen.svg?logo=java)](https://github.com/spring-projects/spring-boot)
