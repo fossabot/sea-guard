@@ -1,4 +1,4 @@
-package club.seaguard.app.seaguard;
+package club.seaguard.app.backend;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,6 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * @author WaTony Weng
+ * @date 2019-07-15
  */
 
 @RunWith(SpringRunner.class)
