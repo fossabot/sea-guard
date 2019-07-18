@@ -34,7 +34,7 @@ import java.util.List;
 @Configuration
 @EnableSwagger2
 @EnableSwaggerBootstrapUI
-public class Swagger2Configuration implements WebMvcConfigurer {
+public class Swagger2Config implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
