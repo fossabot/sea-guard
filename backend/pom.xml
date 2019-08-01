@@ -88,7 +88,7 @@
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>swagger-bootstrap-ui</artifactId>
-            <version>1.9.4</version>
+            <version>1.9.5</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -122,11 +122,11 @@
             <version>${druid.version}</version>
         </dependency>
 
-        <!-- Json -->
+        <!-- JSON -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.58</version>
+            <version>1.2.59</version>
         </dependency>
 
         <!-- MySQL -->

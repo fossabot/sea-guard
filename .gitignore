@@ -27,6 +27,7 @@ logs/
 .idea
 *.iml
 *.log
+.factorypath
 
 ### macOS Directory ### 
 .DS_Store
