@@ -15,6 +15,9 @@ logs/
 *.tar.gz
 *.rar
 
+### Plugin Directory ###
+target/
+
 ### IDE or Text Editor Directory ###
 *.suo
 *.ntvs*
