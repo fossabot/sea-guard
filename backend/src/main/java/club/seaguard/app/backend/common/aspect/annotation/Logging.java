@@ -10,7 +10,6 @@ import java.lang.annotation.Target;
  * 日志注解
  *
  * @author WaTony Weng
- * @date 2019-07-15
  */
 
 @Target(ElementType.METHOD)
@@ -18,8 +17,9 @@ import java.lang.annotation.Target;
 @Documented
 public @interface Logging {
 
-    /**
-     * 日志内容
-     */
-    String value() default "";
+  /**
+   * 日志内容
+   */
+  String value() default "";
+
 }

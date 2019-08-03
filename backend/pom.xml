@@ -207,7 +207,7 @@
           <execution>
             <phase>validate</phase>
             <configuration>
-              <skip>false</skip>
+              <skip>true</skip>
             </configuration>
             <goals>
               <goal>validate</goal>
@@ -224,7 +224,7 @@
             <id>checkstyle-validation</id>
             <phase>validate</phase>
             <configuration>
-              <skip>false</skip>
+              <skip>true</skip>
               <configLocation>io/spring/javaformat/checkstyle/checkstyle.xml</configLocation>
               <includeTestSourceDirectory>true</includeTestSourceDirectory>
             </configuration>

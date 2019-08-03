@@ -27,7 +27,7 @@ import java.util.List;
  * Swagger配置
  *
  * @author WaTony Weng
- * @date 2019-07-15
+ * @see org.springframework.web.servlet.config.annotation.WebMvcConfigurer
  */
 
 @Slf4j
@@ -36,39 +36,52 @@ import java.util.List;
 @EnableSwaggerBootstrapUI
 public class Swagger2Config implements WebMvcConfigurer {
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
-    }
+  /**
+   * 资源过滤器
+   *
+   * @param registry 资源处理器
+   */
+  @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+    registry.addResourceHandler("doc.html").addResourceLocations("classpath:/META-INF/resources/");
+    registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+  }
 
-    @Bean
-    public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("club.seaguard.app.backend.modules"))
-                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-                .paths(PathSelectors.any())
-                .build()
-                .globalOperationParameters(setHeaderToken());
-    }
+  /**
+   * 创建API文档清单
+   *
+   * @return 文档清单
+   */
+  @Bean
+  public Docket createRestApi() {
+    return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
+      .apis(RequestHandlerSelectors.basePackage("club.seaguard.app.backend.modules"))
+      .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class)).paths(PathSelectors.any())
+      .build().globalOperationParameters(setHeaderToken());
+  }
 
-    private List<Parameter> setHeaderToken() {
-        ParameterBuilder tokenParam = new ParameterBuilder();
-        List<Parameter> parameters = new ArrayList<>();
-        tokenParam.name(AppConstant.X_ACCESS_TOKEN).description("token").modelRef(new ModelRef("string")).parameterType("header").required(false).build();
-        parameters.add(tokenParam.build());
-        return parameters;
-    }
+  /**
+   * 设置Header认证码
+   *
+   * @return 参数集合
+   */
+  private List<Parameter> setHeaderToken() {
+    ParameterBuilder tokenParam = new ParameterBuilder();
+    List<Parameter> parameters = new ArrayList<>();
+    tokenParam.name(AppConstant.X_ACCESS_TOKEN).description("token").modelRef(new ModelRef("string"))
+      .parameterType("header").required(false).build();
+    parameters.add(tokenParam.build());
+    return parameters;
+  }
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("SeaGuard 后台服务API接口文档")
-                .version("1.0.0")
-                .description("RestFul 风格接口")
-                .build();
-    }
+  /**
+   * 获取API信息
+   *
+   * @return API信息
+   */
+  private ApiInfo apiInfo() {
+    return new ApiInfoBuilder().title("SeaGuard 后台服务API接口文档").version("1.0.0").description("RestFul 风格接口").build();
+  }
 
 }

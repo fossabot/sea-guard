@@ -12,51 +12,69 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * Web配置
+ *
  * @author WaTony Weng
- * @date 2019-07-15
+ * @see org.springframework.web.servlet.config.annotation.WebMvcConfigurer
  */
 
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    @Value("${guard.path.upload}")
-    private String uploadPath;
-    @Value("${guard.path.webapp}")
-    private String webAppPath;
-    @Value("${spring.resource.static-locations}")
-    private String staticLocations;
+  /**
+   * 上传路径
+   */
+  @Value("${guard.path.upload}")
+  private String uploadPath;
 
-    /**
-     * 跨域配置
-     */
-    @Bean
-    public CorsFilter corsFilter() {
-        final UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
-        final CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.setAllowCredentials(true);
-        corsConfiguration.addAllowedOrigin("*");
-        corsConfiguration.addAllowedHeader("*");
-        corsConfiguration.addAllowedMethod("*");
-        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
-        return new CorsFilter(urlBasedCorsConfigurationSource);
-    }
+  /**
+   * Web应用路径
+   */
+  @Value("${guard.path.webapp}")
+  private String webAppPath;
 
-    /**
-     * 静态资源的配置
-     */
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**")
-                .addResourceLocations("file:" + uploadPath + "//", "file:" + webAppPath + "//")
-                .addResourceLocations(staticLocations.split(","));
-    }
+  /**
+   * 静态资源路径
+   */
+  @Value("${spring.resource.static-locations}")
+  private String staticLocations;
 
-    /**
-     * 访问根路径默认跳转页面
-     */
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("index.html");
-    }
+  /**
+   * 跨域配置
+   *
+   * @return 跨域过滤器
+   */
+  @Bean
+  public CorsFilter corsFilter() {
+    final UrlBasedCorsConfigurationSource urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+    final CorsConfiguration corsConfiguration = new CorsConfiguration();
+    corsConfiguration.setAllowCredentials(true);
+    corsConfiguration.addAllowedOrigin("*");
+    corsConfiguration.addAllowedHeader("*");
+    corsConfiguration.addAllowedMethod("*");
+    urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", corsConfiguration);
+    return new CorsFilter(urlBasedCorsConfigurationSource);
+  }
+
+  /**
+   * 静态资源的配置
+   *
+   * @param registry 资源处理器
+   */
+  @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("/**")
+      .addResourceLocations("file:" + uploadPath + "//", "file:" + webAppPath + "//")
+      .addResourceLocations(staticLocations.split(","));
+  }
+
+  /**
+   * 访问根路径默认跳转页面
+   *
+   * @param registry 视图控制处理器
+   */
+  @Override
+  public void addViewControllers(ViewControllerRegistry registry) {
+    registry.addViewController("/").setViewName("index.html");
+  }
 
 }

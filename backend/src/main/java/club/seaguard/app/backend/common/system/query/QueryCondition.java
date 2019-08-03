@@ -6,58 +6,60 @@ import java.io.Serializable;
  * 查询条件
  *
  * @author WaTony Weng
- * @date 2019-07-15
  */
 
 public class QueryCondition implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private String field;
-    private String type;
-    private String rule;
-    private String val;
+  private String field;
 
-    public String getField() {
-        return field;
+  private String type;
+
+  private String rule;
+
+  private String val;
+
+  public String getField() {
+    return field;
+  }
+
+  public void setField(String field) {
+    this.field = field;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getRule() {
+    return rule;
+  }
+
+  public void setRule(String rule) {
+    this.rule = rule;
+  }
+
+  public String getVal() {
+    return val;
+  }
+
+  public void setVal(String val) {
+    this.val = val;
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    if (field == null || "".equals(field)) {
+      return "";
     }
-
-    public void setField(String field) {
-        this.field = field;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getRule() {
-        return rule;
-    }
-
-    public void setRule(String rule) {
-        this.rule = rule;
-    }
-
-    public String getVal() {
-        return val;
-    }
-
-    public void setVal(String val) {
-        this.val = val;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        if (field == null || "".equals(field)) {
-            return "";
-        }
-        sb.append(this.field).append(" ").append(this.rule).append(" ").append(this.type).append(" ").append(this.val);
-        return sb.toString();
-    }
+    sb.append(this.field).append(" ").append(this.rule).append(" ").append(this.type).append(" ").append(this.val);
+    return sb.toString();
+  }
 
 }

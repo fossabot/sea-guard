@@ -10,7 +10,6 @@ import lombok.experimental.Accessors;
  * 数据字典值模型
  *
  * @author WaTony Weng
- * @date 2019-07-15
  */
 
 @Data
@@ -18,23 +17,24 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class DictModel implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    public DictModel() {
-    }
+  /**
+   * 字典值
+   */
+  private String value;
 
-    public DictModel(String value, String text) {
-        this.value = value;
-        this.text = text;
-    }
+  /**
+   * 字典文本
+   */
+  private String text;
 
-    /**
-     * 字典值
-     */
-    private String value;
-    /**
-     * 字典文本
-     */
-    private String text;
+  public DictModel() {
+  }
+
+  public DictModel(String value, String text) {
+    this.value = value;
+    this.text = text;
+  }
 
 }
