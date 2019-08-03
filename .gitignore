@@ -15,9 +15,6 @@ logs/
 *.tar.gz
 *.rar
 
-### Plugin Directory ###
-target/
-
 ### IDE or Text Editor Directory ###
 *.suo
 *.ntvs*
@@ -46,7 +43,9 @@ logback.out.xml
 
 ### BackEnd Directory ###
 backend/src/main/resources/public/
-backend/target
+backend/target/
+backend/logs/
+backend/logback.out.xml
 selenium-debug.log
 
 ### FrontEnd Directory ###
