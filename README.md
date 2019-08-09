@@ -9,6 +9,7 @@
 [![versionvuecli](https://img.shields.io/badge/vue_CLI-3.9.3-brightgreen.svg?logo=vue.js)](https://cli.vuejs.org)
 [![versionnodejs](https://img.shields.io/badge/nodejs-v12.7.0-brightgreen.svg?logo=node.js)](https://nodejs.org)
 [![versionwebpack](https://img.shields.io/badge/webpack-4.38.0-brightgreen.svg?logo=webpack)](https://webpack.js.org)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwatonyweng%2Fsea-guard.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwatonyweng%2Fsea-guard?ref=badge_shield)
 
 This project was generated using [spring-boot](https://github.com/spring-projects/spring-boot) and [vue](https://github.com/vuejs/vue).
 
@@ -30,3 +31,5 @@ This project was generated using [spring-boot](https://github.com/spring-project
 ## License
 
 - sea-guard is released under an [MIT](https://opensource.org/licenses/MIT) license. See [LICENSE](https://github.com/watonyweng/sea-guard/tree/master/LICENSE) for more information.
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fwatonyweng%2Fsea-guard.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fwatonyweng%2Fsea-guard?ref=badge_large)
